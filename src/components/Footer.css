@@ -1,0 +1,132 @@
+/* Main Footer Wrapper */
+.footer {
+  background-color: #1a1a1a; /* Premium Dark Background */
+  color: #e0e0e0;
+  padding: 60px 8% 20px;
+  font-family: 'Inter', 'Arial', sans-serif;
+  border-top: 4px solid #d32f2f; /* Blood Red Top Border */
+}
+
+/* Grid Layout for Columns */
+.footer-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+/* Column Headings */
+.footer-col h3 {
+  color: #ffffff;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 8px;
+}
+
+/* Red underline under headings */
+.footer-col h3::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 40px;
+  background-color: #d32f2f;
+}
+
+/* Brand Section Styling */
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.footer-logo img {
+  height: 45px;
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2));
+}
+
+.footer-logo h2 {
+  color: #ffffff;
+  font-size: 1.8rem;
+  margin: 0;
+  background: linear-gradient(to right, #bf953f, #fcf6ba); /* Golden text mix */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.footer-desc {
+  line-height: 1.6;
+  font-size: 0.95rem;
+  color: #a0a0a0;
+  max-width: 90%;
+}
+
+/* Lists and Links */
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 12px;
+}
+
+.footer-col ul li a {
+  color: #b0b0b0;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+/* Hover Effect with tiny slide */
+.footer-col ul li a:hover {
+  color: #fcf6ba; /* Golden hover */
+  transform: translateX(5px);
+}
+
+/* Contact Column */
+.contact-col p {
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+  color: #b0b0b0;
+}
+
+/* Footer Bottom (Copyright Section) */
+.footer-bottom {
+  border-top: 1px solid #333;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.social-links span:hover {
+  transform: scale(1.2);
+  transition: 0.3s;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+}

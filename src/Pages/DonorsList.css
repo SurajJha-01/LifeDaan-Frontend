@@ -1,0 +1,112 @@
+.donors-page {
+  min-height: 100vh;
+  background-color: #f4f6f9;
+  padding-bottom: 50px;
+}
+
+.donors-header {
+  background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+  margin-bottom: 40px;
+}
+
+.donors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.donor-card {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-top: 4px solid transparent;
+}
+
+.donor-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  border-top: 4px solid #d32f2f;
+}
+
+.donor-avatar {
+  font-size: 3rem;
+  background: #ffebee;
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  border-radius: 50%;
+  margin: 0 auto 15px;
+}
+
+.donor-blood-group {
+  color: #d32f2f;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+.view-details-btn {
+  display: inline-block;
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #1976D2;
+  font-weight: bold;
+}
+
+/* 🚀 MODAL OVERLAY DESIGN */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 450px;
+  padding: 30px;
+  position: relative;
+  animation: popIn 0.3s ease-out;
+}
+
+@keyframes popIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px; right: 15px;
+  background: none; border: none;
+  font-size: 1.2rem; color: #666;
+  cursor: pointer;
+}
+
+.close-btn:hover { color: #d32f2f; }
+
+.modal-header { text-align: center; margin-bottom: 25px; }
+.modal-avatar { font-size: 4rem; margin-bottom: 10px; }
+.modal-badge { background: #e8f5e9; color: #2e7d32; padding: 5px 10px; border-radius: 20px; font-size: 0.85rem; font-weight: bold; }
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+}

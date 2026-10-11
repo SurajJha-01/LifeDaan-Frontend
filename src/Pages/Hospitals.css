@@ -1,0 +1,165 @@
+/* 🟢 Global Page Styling */
+.hospitals-page {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  padding-bottom: 50px;
+}
+
+/* 🟢 Header & Search Section */
+.hosp-header {
+  background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.hosp-header h1 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+}
+
+.hosp-header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  margin-bottom: 30px;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  background: white;
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 30px;
+  padding: 10px 25px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+.search-icon {
+  font-size: 1.5rem;
+  margin-right: 15px;
+}
+
+.search-container input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+/* 🟢 Grid Layout */
+.hosp-container {
+  max-width: 1200px;
+  margin: -30px auto 0; /* Header ke upar overlap karne ke liye */
+  padding: 0 20px;
+}
+
+.hosp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+}
+
+/* 🟢 Hospital Card Design */
+.hosp-card {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  border-top: 5px solid #d32f2f;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer; /* 🚀 NAYA: Pointer add kiya */
+}
+
+.hosp-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(211, 47, 47, 0.15);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.verified-badge {
+  background: #e8f5e9;
+  color: #2e7d32;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.stock-badge {
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.stock-badge.green { background: #e3f2fd; color: #1565c0; }
+.stock-badge.red { background: #ffebee; color: #d32f2f; }
+
+.hosp-name {
+  font-size: 1.6rem;
+  color: #222;
+  margin-bottom: 5px;
+}
+
+.hosp-location {
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+}
+
+.hosp-contact {
+  background: #f9f9f9;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 1.05rem;
+  border-left: 3px solid #d32f2f;
+}
+
+/* 🟢 Card Buttons */
+.card-footer {
+  display: flex;
+  gap: 10px;
+  margin-top: auto; /* Push buttons to bottom */
+}
+
+.btn-directions, .btn-contact {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-directions {
+  background: #f0f0f0;
+  color: #333;
+}
+.btn-directions:hover { background: #e0e0e0; }
+
+.btn-contact {
+  background: #d32f2f;
+  color: white;
+}
+.btn-contact:hover { background: #b71c1c; }
+
+/* 🟢 No Results State */
+.no-results {
+  text-align: center;
+  margin-top: 80px;
+  color: #666;
+}
+.no-results h3 { font-size: 2rem; color: #333; margin-bottom: 10px; }

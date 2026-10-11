@@ -1,0 +1,257 @@
+/* Main Navbar Container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #d32f2f;
+  padding: 12px 5%;
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Logo Styling */
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-decoration: none;
+}
+
+.logo-img {
+  height: 55px;
+  width: auto;
+  object-fit: contain;
+  border: none;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.logo-text h1 {
+  margin: 0;
+  font-size: 2.2rem;
+  font-weight: bold;
+  line-height: 1;
+  letter-spacing: 0.5px;
+  background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.logo-text p {
+  margin: 0;
+  margin-top: 4px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  color: #fcebb6;
+}
+
+/* Navigation Links Container */
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+
+.nav-links li a:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #fcf6ba;
+  transform: translateY(-2px);
+}
+
+.nav-links li .login-btn {
+  background-color: white;
+  color: #d32f2f;
+  font-weight: bold;
+  padding: 10px 22px;
+  border-radius: 25px; 
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.nav-links li .login-btn:hover {
+  background-color: #fcf6ba;
+  color: #b71c1c;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* =========================================
+   🟢 NEW DROPDOWN STYLING
+========================================= */
+
+.user-dropdown-container {
+  position: relative; /* Dropdown ko iske andar fix rakhne ke liye */
+  cursor: pointer;
+}
+
+.user-profile-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(255, 255, 255, 0.15);
+  padding: 10px 18px;
+  border-radius: 25px;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.user-profile-btn:hover {
+  background-color: white;
+  color: #d32f2f;
+}
+
+.user-profile-btn .arrow {
+  font-size: 0.7rem;
+  transition: transform 0.3s ease;
+}
+
+.user-dropdown-container:hover .arrow {
+  transform: rotate(180deg); /* Hover par arrow ghoom jayega */
+}
+
+/* The actual dropdown menu */
+.dropdown-menu {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background-color: white;
+  min-width: 200px;
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: slideDownFade 0.3s ease;
+}
+
+@keyframes slideDownFade {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.dropdown-menu a, .logout-btn {
+  padding: 14px 20px;
+  text-decoration: none;
+  color: #333 !important; /* Force dark text */
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: background 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f9f9f9;
+  color: #d32f2f !important;
+  transform: none !important;
+}
+
+.logout-btn {
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  color: #d32f2f !important;
+  font-weight: bold;
+}
+
+.logout-btn:hover {
+  background-color: #fff5f5;
+}
+
+/* =========================================
+   📱 MOBILE RESPONSIVENESS (Navbar)
+   ========================================= */
+
+/* Desktop par icon hide rakho */
+.menu-icon {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #333; /* Agar apka navbar dark hai toh ise 'white' kar dena */
+  user-select: none;
+}
+
+@media screen and (max-width: 768px) {
+  /* Hamburger icon show karo */
+  .menu-icon {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 25px;
+  }
+
+  /* Links ko chupao aur vertical banao */
+  .nav-links {
+    position: absolute;
+    top: 80px; /* Navbar ki height ke hisaab se adjust karein */
+    left: -100%; /* Screen se bahar */
+    flex-direction: column;
+    background-color: #d32f2fee; /* Apne theme ka color dalein */
+    width: 100%;
+    text-align: center;
+    transition: 0.4s all ease-in-out;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+    padding: 20px 0;
+    z-index: 999;
+  }
+
+  /* Hamburger click hone par screen ke andar lao */
+  .nav-links.active {
+    left: 0;
+  }
+
+  .nav-links li {
+    margin: 15px 0;
+    width: 100%;
+  }
+
+  /* User Dropdown ko mobile par theek karna */
+  .user-dropdown-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dropdown-menu {
+    position: relative; /* Mobile par absolute nahi, relative chaiye */
+    box-shadow: none;
+    background-color: #f9f9f9;
+    width: 90%;
+    margin-top: 10px;
+    border-radius: 8px;
+  }
+
+  .dropdown-menu a, .dropdown-menu button {
+    text-align: center;
+    padding: 12px;
+  }
+}

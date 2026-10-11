@@ -1,0 +1,163 @@
+/* 🟢 LIVE INVENTORY STYLING */
+.inventory-section {
+  margin-bottom: 50px;
+}
+
+.inventory-section h3 {
+  font-size: 1.6rem;
+  color: #333;
+  margin-bottom: 20px;
+  border-left: 4px solid #d32f2f;
+  padding-left: 10px;
+}
+
+.inventory-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.blood-card {
+  background: white;
+  padding: 25px 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  border-top: 5px solid #2e7d32; /* Safe Stock (Green) */
+  transition: 0.3s;
+}
+
+/* 🔥 Magic Alert Class: Jab khoon kam hoga */
+.blood-card.low-stock {
+  border-top-color: #d32f2f; /* Danger (Red) */
+  background-color: #fffafa;
+}
+
+.blood-type {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #d32f2f;
+  margin: 0;
+}
+
+.blood-units {
+  font-size: 1.1rem;
+  color: #555;
+  margin: 10px 0;
+  font-weight: 600;
+}
+
+.stock-controls {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.stock-btn {
+  background: #f0f0f0;
+  border: none;
+  font-size: 1.5rem;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  transition: 0.2s;
+}
+
+.stock-btn:hover { background: #d32f2f; color: white; }
+.stock-btn:active { transform: scale(0.9); }
+
+/* Main Layout (Same as Donor) */
+.hospital-wrapper {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f4f7f6;
+  font-family: 'Inter', 'Arial', sans-serif;
+}
+
+/* 🟢 Main Content Area */
+.hospital-main {
+  flex: 1;
+  padding: 40px;
+  overflow-y: auto;
+}
+
+/* 🟢 Request Form Styling */
+.request-form-container {
+  background: white;
+  padding: 35px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  border-top: 5px solid #d32f2f;
+  max-width: 800px;
+  margin-top: 20px;
+}
+
+.request-form-container h3 {
+  margin-top: 0;
+  color: #333;
+  font-size: 1.6rem;
+  margin-bottom: 25px;
+}
+
+.req-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.req-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.req-input-group.full-width {
+  grid-column: span 2;
+}
+
+.req-input-group label {
+  font-weight: 600;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.req-input-group input, 
+.req-input-group select {
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.3s;
+}
+
+.req-input-group input:focus, 
+.req-input-group select:focus {
+  border-color: #d32f2f;
+  box-shadow: 0 0 5px rgba(211, 47, 47, 0.2);
+}
+
+.submit-req-btn {
+  background-color: #d32f2f;
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: 0.3s;
+}
+
+.submit-req-btn:hover {
+  background-color: #b71c1c;
+  transform: translateY(-2px);
+}
+

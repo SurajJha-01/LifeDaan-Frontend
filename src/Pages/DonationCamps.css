@@ -1,0 +1,66 @@
+.camps-page {
+  min-height: 100vh;
+  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url('https://i.pinimg.com/1200x/97/d8/c3/97d8c3522a26d9cb30ee30839076dbd5.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  padding-bottom: 50px;
+}
+
+.camps-header {
+  text-align: center;
+  color: white;
+  padding: 80px 20px;
+}
+
+.camps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.camp-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 15px;
+  padding: 30px;
+  color: white;
+  transition: 0.3s;
+}
+
+.camp-card:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.camp-status {
+  background: #4CAF50;
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.camp-title { font-size: 1.8rem; margin-bottom: 10px; color: #ff5252; }
+.camp-details p { margin: 8px 0; font-size: 1.05rem; }
+.camp-desc { font-style: italic; color: #ccc; margin-top: 15px; }
+
+.btn-join {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: white;
+  color: #d32f2f;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-join:hover { background: #ff5252; color: white; }

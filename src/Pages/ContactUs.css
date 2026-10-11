@@ -1,0 +1,157 @@
+.contact-page {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding-bottom: 60px;
+}
+
+.contact-header {
+  background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
+  color: white;
+  text-align: center;
+  padding: 80px 20px 120px; /* Neeche extra space jisse cards overlap kar sakein */
+}
+
+.contact-header h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.contact-header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.contact-container {
+  max-width: 1200px;
+  margin: -80px auto 0; /* Magic: Header ke upar overlap karta hai */
+  padding: 0 20px;
+}
+
+/* 🟢 INFO CARDS */
+.contact-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.info-card {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+  border-top: 4px solid #d32f2f;
+}
+
+.info-card:hover {
+  transform: translateY(-8px);
+}
+
+.info-icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.info-card h3 {
+  color: #333;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.info-card p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* 🟢 FORM & MAP LAYOUT */
+.contact-bottom {
+  display: flex;
+  gap: 0;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+  overflow: hidden; /* Round corners maintain karne ke liye */
+}
+
+.contact-form-container {
+  flex: 1;
+  padding: 50px;
+}
+
+.contact-form-container h2 {
+  color: #d32f2f;
+  margin-bottom: 30px;
+  font-size: 2.2rem;
+}
+
+.contact-form .input-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form label {
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 8px;
+}
+
+.contact-form input, .contact-form textarea {
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1.05rem;
+  background: #fdfdfd;
+  transition: all 0.3s ease;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+  border-color: #d32f2f;
+  outline: none;
+  background: white;
+  box-shadow: 0 0 8px rgba(211, 47, 47, 0.2);
+}
+
+.btn-submit-contact {
+  width: 100%;
+  padding: 15px;
+  background: #d32f2f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 10px;
+}
+
+.btn-submit-contact:hover {
+  background: #b71c1c;
+}
+
+.contact-map {
+  flex: 1;
+  min-height: 500px;
+  padding: 10px; /* Map border se chipka hua acha lagta hai */
+  background: #f1f1f1;
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+  .contact-bottom {
+    flex-direction: column;
+  }
+  .contact-map {
+    min-height: 350px;
+  }
+  .contact-form-container {
+    padding: 30px;
+  }
+}

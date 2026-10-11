@@ -1,0 +1,198 @@
+/* Wrapper & Card */
+.auth-wrapper {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('https://i.pinimg.com/1200x/97/d8/c3/97d8c3522a26d9cb30ee30839076dbd5.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  padding: 50px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  font-family: 'Inter', 'Arial', sans-serif;
+}
+
+.auth-card-pro {
+  background: #ffffffd0;
+  width: 100%;
+  max-width: 850px;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+/* Tabs */
+.tab-container {
+  display: flex;
+  background: #fafafa;
+  border-bottom: 2px solid #eeeeee;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 18px 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #888;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+  color: #d32f2f;
+  background: #fff;
+}
+
+.active-tab {
+  color: #d32f2f;
+  background: #fff;
+  border-bottom: 3px solid #d32f2f;
+}
+
+/* Form Container */
+.pro-form {
+  padding: 40px;
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.form-header h2 {
+  color: #2c3e50;
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.form-header p {
+  color: #7f8c8d;
+  font-size: 0.95rem;
+}
+
+/* Role Selector */
+.role-selector-pro {
+  background: #fff5f5;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #ffecec;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.role-selector-pro label {
+  font-weight: 600;
+  color: #d32f2f;
+  font-size: 1.1rem;
+}
+
+/* Form Sections */
+.form-section-pro {
+  margin-bottom: 35px;
+}
+
+.section-title {
+  font-size: 1.15rem;
+  color: #34495e;
+  border-bottom: 2px solid #ecf0f1;
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Grid Layout */
+.input-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+/* Inputs */
+.input-group-pro {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group-pro label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 6px;
+}
+
+.input-group-pro input, 
+.input-group-pro select, 
+.input-group-pro textarea,
+.pro-input {
+  padding: 12px 15px;
+  border: 1px solid #dcdde1;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  color: #2f3640;
+  background-color: #fafbfc;
+  transition: all 0.3s ease;
+}
+
+.input-group-pro textarea {
+  resize: vertical;
+}
+
+/* Magic Focus Effect */
+.input-group-pro input:focus, 
+.input-group-pro select:focus, 
+.input-group-pro textarea:focus,
+.pro-input:focus {
+  outline: none;
+  border-color: #d32f2f;
+  background-color: #fff;
+  box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.1);
+}
+
+/* Button */
+.form-footer-pro {
+  margin-top: 20px;
+  text-align: right;
+}
+
+.pro-submit-btn {
+  background-color: #d32f2f;
+  color: #fff;
+  padding: 15px 40px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s;
+}
+
+.pro-submit-btn:hover {
+  background-color: #b71c1c;
+}
+
+.pro-submit-btn:active {
+  transform: scale(0.98);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .input-grid {
+    grid-template-columns: 1fr;
+  }
+  .role-selector-pro {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .pro-form {
+    padding: 25px 15px;
+  }
+}

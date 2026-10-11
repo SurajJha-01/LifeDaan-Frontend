@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+  font-family: 'Arial', sans-serif;
+  background-color: #fcfcfc;
+}
+
+#root {
+  width: 100%;
+}
+/* =========================================
+   📱 MOBILE RESPONSIVENESS MASTER FIX 📱
+   ========================================= */
+
+@media screen and (max-width: 768px) {
+  /* 1. Dashboard Wrappers (Column layout) */
+  .hospital-wrapper, 
+  .dashboard-wrapper, 
+  .patient-wrapper {
+    flex-direction: column !important;
+    height: auto !important;
+    min-height: 100vh;
+  }
+
+  /* 2. Sidebar Mobile View (Horizontal Scroll) */
+  .sidebar {
+    width: 100% !important;
+    min-height: auto !important;
+    padding: 10px 0 !important;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .sidebar-menu {
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto !important; 
+    white-space: nowrap !important;
+    padding: 0 10px !important;
+    gap: 10px;
+  }
+  
+  .sidebar-menu li {
+    flex: 0 0 auto;
+    font-size: 14px;
+    padding: 10px 15px !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* Hide scrollbar for a clean look */
+  .sidebar-menu::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* 3. Main Content Full Width */
+  .main-content, 
+  .hospital-main, 
+  .patient-main {
+    width: 100% !important;
+    padding: 15px !important;
+    margin-left: 0 !important;
+  }
+
+  /* 4. Grids ko Single Column mein badalna */
+  .stats-grid, 
+  .req-form-grid, 
+  .tracker-grid, 
+  .inventory-grid {
+    grid-template-columns: 1fr !important;
+    gap: 15px !important;
+    display: grid !important;
+  }
+
+  /* 5. Inputs & Buttons ko 100% Width dena */
+  .req-input-group, 
+  .full-width {
+    grid-column: span 1 !important;
+    width: 100% !important;
+  }
+  
+  input, select, textarea {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 6. Profile Section aur Forms ko theek karna */
+  .requests-section > div[style*="display: flex"],
+  .dashboard-header,
+  .request-card {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 10px;
+  }
+
+  /* 7. Navbar theek karna (Agar zaroorat pade) */
+  .navbar {
+    padding: 15px !important;
+  }
+  .nav-links {
+    gap: 10px !important;
+    font-size: 14px !important;
+  }
+}
