@@ -24,7 +24,7 @@ const Login = ({ setIsLoggedIn, setUserName }) => {
 
     if (isLogin) {
       try {
-        const response = await fetch('http://localhost:5000/api/auth/login', {
+        const response = await fetch('https://lifedaan-backend.onrender.com/api/auth/login', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ email: formData.email, password: formData.password })
@@ -83,7 +83,7 @@ const Login = ({ setIsLoggedIn, setUserName }) => {
     try {
       const payload = { ...formData, role };
 
-      const response = await fetch('http://localhost:5000/api/auth/register', {
+      const response = await fetch('https://lifedaan-backend.onrender.com/api/auth/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)

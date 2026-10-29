@@ -79,7 +79,7 @@ function App() {
 
   // REAL-TIME NOTIFICATION LOGIC START
   useEffect(() => {
-    const socket = io("http://localhost:5000"); 
+    const socket = io("https://lifedaan-backend.onrender.com"); 
 
     socket.on("connect", () => {
       console.log("🟢 Frontend Connected to Socket.io:", socket.id);

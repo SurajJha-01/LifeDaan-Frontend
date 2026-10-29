@@ -6,7 +6,7 @@ const DonationCamps = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/camps/all')
+    fetch('https://lifedaan-backend.onrender.com/api/camps/all')
       .then(res => res.json())
       .then(data => {
         const today = new Date().toISOString().split('T')[0];

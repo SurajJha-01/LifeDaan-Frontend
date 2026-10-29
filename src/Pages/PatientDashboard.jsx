@@ -22,7 +22,7 @@ const PatientDashboard = () => {
   // FETCH PATIENT'S OWN REQUESTS
   const fetchMyRequests = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/api/requests/my-requests/${userName}`);
+      const response = await fetch(`https://lifedaan-backend.onrender.com/api/requests/my-requests/${userName}`);
       const data = await response.json();
       if (response.ok) setMyRequests(data);
     } catch (error) {
@@ -46,7 +46,7 @@ const PatientDashboard = () => {
     try {
       const requestPayload = { ...formData, patientName: userName };
 
-      const response = await fetch('http://localhost:5000/api/requests/create', {
+      const response = await fetch('https://lifedaan-backend.onrender.com/api/requests/create', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(requestPayload)
@@ -71,7 +71,7 @@ const PatientDashboard = () => {
     if (!confirm) return;
 
     try {
-      const response = await fetch(`http://localhost:5000/api/requests/complete/${requestId}`, {
+      const response = await fetch(`https://lifedaan-backend.onrender.com/api/requests/complete/${requestId}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ donorEmail })
@@ -95,7 +95,7 @@ const PatientDashboard = () => {
       return alert("❌ New passwords do not match!");
     }
     try {
-      const response = await fetch(`http://localhost:5000/api/auth/change-password/${userEmail}`, {
+      const response = await fetch(`https://lifedaan-backend.onrender.com/api/auth/change-password/${userEmail}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
@@ -120,7 +120,7 @@ const PatientDashboard = () => {
     const confirmName = window.prompt(`DANGER ZONE: Type "${userName}" to permanently delete your patient account.`);
     if (confirmName === userName) {
       try {
-        const response = await fetch(`http://localhost:5000/api/auth/delete-account/${encodeURIComponent(userName)}`, { method: 'DELETE' });
+        const response = await fetch(`https://lifedaan-backend.onrender.com/api/auth/delete-account/${encodeURIComponent(userName)}`, { method: 'DELETE' });
         if (response.ok) {
           localStorage.clear();
           window.location.href = '/'; 

@@ -9,7 +9,7 @@ const Hospitals = () => {
   useEffect(() => {
     const fetchHospitals = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/hospitals/list');
+        const response = await fetch('https://lifedaan-backend.onrender.com/api/hospitals/list');
         const data = await response.json();
         
         if (response.ok) {

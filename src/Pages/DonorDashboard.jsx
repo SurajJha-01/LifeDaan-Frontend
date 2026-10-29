@@ -44,7 +44,7 @@ const DonorDashboard = () => {
       try {
         const donorPincode = localStorage.getItem('userPincode');
         if (donorPincode) {
-          const response = await fetch(`http://localhost:5000/api/requests/active/${donorPincode}`);
+          const response = await fetch(`https://lifedaan-backend.onrender.com/api/requests/active/${donorPincode}`);
           const data = await response.json();
           setRequests(data);
           setLoading(false);
@@ -63,7 +63,7 @@ const DonorDashboard = () => {
   useEffect(() => {
     const fetchHistory = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/requests/donor-history/${encodeURIComponent(userEmail)}`); const data = await response.json();
+        const response = await fetch(`https://lifedaan-backend.onrender.com/api/requests/donor-history/${encodeURIComponent(userEmail)}`); const data = await response.json();
         if (response.ok) {
           setDonationHistory(data);
           setTotalDonations(data.length);
@@ -133,7 +133,7 @@ const DonorDashboard = () => {
     }
 
     try {
-      const response = await fetch(`http://localhost:5000/api/requests/accept/${requestId}`, {
+      const response = await fetch(`https://lifedaan-backend.onrender.com/api/requests/accept/${requestId}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -207,7 +207,7 @@ const DonorDashboard = () => {
 
   const saveProfile = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/api/auth/update-profile/${userEmail}`, {
+      const response = await fetch(`https://lifedaan-backend.onrender.com/api/auth/update-profile/${userEmail}`, {
         method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ profilePicture: profilePic })
       });
       if (response.ok) {
@@ -222,7 +222,7 @@ const DonorDashboard = () => {
     e.preventDefault();
     if (passwordData.newPassword !== passwordData.confirmPassword) return alert("❌ New passwords do not match!");
     try {
-      const response = await fetch(`http://localhost:5000/api/auth/change-password/${userEmail}`, {
+      const response = await fetch(`https://lifedaan-backend.onrender.com/api/auth/change-password/${userEmail}`, {
         method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ currentPassword: passwordData.currentPassword, newPassword: passwordData.newPassword })
       });
       const data = await response.json();
@@ -233,15 +233,47 @@ const DonorDashboard = () => {
     } catch (error) { alert("Server Error!"); }
   };
 
+  
   const handleDeleteAccount = async () => {
-    const confirmName = window.prompt(`DANGER ZONE: Type "${userName}" to delete account.`);
-    if (confirmName === userName) {
-      try {
-        const response = await fetch(`http://localhost:5000/api/auth/delete-account/${encodeURIComponent(userName)}`, { method: 'DELETE' });
-        if (response.ok) { localStorage.clear(); window.location.href = '/'; }
-      } catch (error) { alert("Server Error!"); }
+    const confirmName = window.prompt(
+      `DANGER ZONE: Type "${userName}" to delete account.`
+    );
+
+    if (confirmName !== userName) return;
+
+    try {
+      const token = localStorage.getItem('token');
+
+      if (!token) {
+        alert('Please login again to delete your account.');
+        return;
+      }
+
+      const response = await fetch(
+        'https://lifedaan-backend.onrender.com/api/auth/delete-account',
+        {
+          method: 'DELETE',
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        }
+      );
+
+      const data = await response.json();
+
+      if (response.ok) {
+        alert('Account deleted successfully.');
+        localStorage.clear();
+        window.location.href = '/';
+      } else {
+        alert(data.message || 'Could not delete account.');
+      }
+    } catch (error) {
+      console.error('Delete Account Error:', error);
+      alert('Server Error!');
     }
   };
+
 
   // RESET TIMER FUNCTION (For Testing/Admin Purposes)
   const handleResetTimer = async () => {
@@ -249,7 +281,7 @@ const DonorDashboard = () => {
     if (!confirmReset) return;
 
     try {
-      const response = await fetch(`http://localhost:5000/api/auth/reset-timer`, {
+      const response = await fetch(`https://lifedaan-backend.onrender.com/api/auth/reset-timer`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: userEmail })
